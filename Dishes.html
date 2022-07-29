@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dishes</title>
+    <style>
+        body{
+                padding: 0px;
+                margin: 0px;
+                background-color: rgb(130, 180, 243);
+            }
+            header>b{
+                font-size: 30px;
+                color: aliceblue;
+            }
+            header{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                background-color: rgb(44, 107, 224);
+                padding: 10px;
+                
+
+            }
+            header>.navbar>a{
+                padding: 10px;
+                margin:10px;
+                font-size: 15px;
+                color: aliceblue;
+                border: 1px solid transparent;
+                text-decoration: none;
+                font-weight: bold;
+
+            }
+            header>.navbar>a:hover{
+                border: 1px solid aliceblue;
+                border-radius: 10px;
+            }
+            
+            #search>input{
+                height: 30px;
+                width:200px;
+                border-radius: 10px;
+                border: none;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1), 
+                            0 8px 8px rgba(0, 0, 0, 0.1),
+                            0 16px 16px rgba(0, 0, 0, 0.1), 
+                            0 32px 32px rgba(0, 0, 0, 0.15),
+                            0 64px 64px rgba(0, 0, 0, 0.15);
+            }
+        .heading{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .cart{
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 5px;
+            height: 30px;
+        }
+        .box-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            
+            padding: 10px;
+            margin: auto;
+            row-gap: 10px;
+            column-gap: 10px;
+            
+        }
+        .box1{
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            margin: 20px;
+            border-radius: 50px;
+            
+
+        }
+        .box2{
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            margin: 20px;
+            border-radius: 50px;
+            
+
+
+        }
+        .box3{
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            margin: 20px;
+            border-radius: 50px;
+
+
+        }
+        .box4{
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            margin: 20px;
+            border-radius: 50px;
+
+        }
+        .box5{
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            margin: 20px;
+            border-radius: 50px;
+
+        }
+        .box6{
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            margin: 20px;
+            border-radius: 50px;
+
+        }
+        button{
+            text-align: center;
+        }
+        footer{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                background-color: rgb(44, 107, 224);
+                padding: 10px;
+                
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <b>MyRestaurant</b>
+        <nav class="navbar">
+            <a href="index.html" target="_self">Home</a>
+            <a href="About.html" target="_self">About</a>
+            <a href="Dishes.html" target="_self">Dishes</a>
+            <a href="Order.html" target="_self">Order</a>
+        </nav>
+        
+            <form action="" id="search">
+                <input type="search" placeholder="Search here...." id="searchbar">
+            </form>
+        
+    </header>
+
+
+    
+    <h1 class="heading"> Our dishes </h1>
+    
+
+    <div class="box-container">
+
+        
+        <div class="box1">
+            
+            <img src="./Images/img1.jpg" alt="" height="200" width="200">
+            <h3>Roasted Butter Chicken</h3>
+            
+            <span>350Rs.</span><br>
+            <button class="cart">Add to cart</button>
+
+        </div>
+        <div class="box2">
+            
+            <img src="./Images/img2.jpg" alt="" height="200" width="200">
+            <h3>Butter Chicken Masala</h3>
+            
+            <span>450Rs.</span><br>
+            <button class="cart">Add to cart</button>
+
+        </div>
+        <div class="box3">
+            
+            <img src="./Images/img6.jpg" alt="" height="200" width="200">
+            <h3>Chicken Fry</h3>
+            
+            <span>500Rs.</span><br>
+            <button class="cart">Add to cart</button>
+
+        </div>
+        <div class="box4">
+            
+            <img src="./Images/img3.jpg" alt="" height="200" width="200">
+            <h3>Chicken Leg piece</h3>
+            
+            <span>450Rs.</span><br>
+            <button class="cart">Add to cart</button>
+
+        </div>
+        <div class="box5">
+            
+            <img src="./Images/img4.jpg" alt="" height="200" width="200">
+            <h3>Tandoor Chicken</h3>
+            
+            <span>400Rs.</span><br>
+            <button class="cart">Add to cart</button>
+
+        </div>
+        <div class="box6">
+            
+            <img src="./Images/img5.jpg" alt="" height="200" width="200">
+            <h3>BBQ Chicken</h3>
+            
+            <span>600Rs.</span><br>
+            <button class="cart">Add to cart</button>
+
+        </div>
+        
+    </div>
+    
+    <footer> copyright @ 2022 by XYZ </footer>
+
+    
+</body>
+</html>

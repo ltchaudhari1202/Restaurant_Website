@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+                padding: 0px;
+                margin: 0px;
+                background-color: rgb(130, 180, 243);
+            }
+            input{
+                height: 30px;
+                width:200px;
+            }
+            #loginForm{
+                
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 600px;
+                
+
+            }
+            table{
+                border: 2px solid black;
+                margin: 20px;
+                padding: 20px;
+                
+                
+
+            }
+            #loginText{
+                
+                text-align: center;
+            }
+            
+            
+           
+    </style>
+</head>
+<body>
+        
+        <form id="loginForm" action="Index.html" onsubmit="return validateForm()" novalidate>
+            
+            <table>
+                
+                
+                <tr><td><h1 id="loginText" >Login</h1></td></tr>
+                
+                <td><input type="text" id="uname" name="uName" onblur="validate1()" placeholder="Enter user name"></td></tr>
+                <tr><td id="error1"></td></tr>
+                
+                <td><input type="password" id="pass" name="Pass" onblur="validate2()" placeholder="Enter password"></td></tr>
+                <tr><td id="error2"></td></tr>
+                <tr><td> <input style="border-radius:10px; width:100px; border: none; margin-left: 50px;" type="submit" value="login">
+                    
+            </table>
+    
+    </form>
+
+    <script>
+        let unameNode=document.getElementById("uname");
+
+        let passNode=document.getElementById("pass");
+        let errorNode1=document.getElementById("error1");
+        let errorNode2=document.getElementById("error2");
+        function validateForm(){
+            let v1=validate1();
+            let v2=validate2();
+    
+            return (v1 && v2); 
+        }
+        function validate1(){
+            let uname=unameNode.value;
+            errorNode1.innerHTML="";
+            if(uname===''){
+                errorNode1.innerHTML="<small>username is required</small>";
+                unameNode.style.border="2px solid red";
+                return false;
+            }
+            else if(uname.length<3 || uname.length>10){
+                errorNode1.innerHTML="<small>username must be 3 to 10 characters long</small>";
+                unameNode.style.border="2px solid red";
+                return false;
+            }
+            else{
+                unameNode.style.border="2px solid green";
+                return true;
+            }
+        }
+        function validate2(){
+            let pass=passNode.value;
+            errorNode2.innerHTML="";
+            let regx=new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,12}$");
+            if(pass===''){
+                errorNode2.innerHTML="<small>Password is required</small>";
+                passNode.style.border="2px solid red";
+                return false;
+            }
+            else if(regx.test(pass)==false){
+                errorNode2.innerHTML="<small>Password should be 6 to 12 characters long Password should have atleast</small>";
+                passNode.style.border="2px solid red";
+                return false;
+            }
+            else{
+                passNode.style.border="2px solid green";
+                return true;
+            }
+        }
+
+    </script>
+    
+    
+</body>
+</html>

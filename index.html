@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyRestaurant</title>
+    <body>
+        <style>
+            body{
+                padding: 0px;
+                margin: 0px;
+                background-color: rgb(130, 180, 243);
+            }
+            header>b{
+                font-size: 30px;
+                color: aliceblue;
+            }
+            header{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                background-color: rgb(44, 107, 224);
+                padding: 10px;
+                
+
+            }
+            header>.navbar>a{
+                padding: 10px;
+                margin:10px;
+                font-size: 15px;
+                color: aliceblue;
+                border: 1px solid transparent;
+                text-decoration: none;
+                font-weight: bold;
+
+            }
+            header>.navbar>a:hover{
+                border: 1px solid aliceblue;
+                border-radius: 10px;
+            }
+            
+            #search>input{
+                height: 30px;
+                width:200px;
+                border-radius: 10px;
+                border: none;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1), 
+                            0 8px 8px rgba(0, 0, 0, 0.1),
+                            0 16px 16px rgba(0, 0, 0, 0.1), 
+                            0 32px 32px rgba(0, 0, 0, 0.15),
+                            0 64px 64px rgba(0, 0, 0, 0.15);
+            }
+            a{
+                padding: 10px;
+                margin:10px;
+                font-size: 15px;
+                color: aliceblue;
+                border: 1px solid transparent;
+                text-decoration: none;
+                font-weight: bold;
+
+            }
+            a:hover{
+                border: 1px solid aliceblue;
+                border-radius: 10px;
+            }
+            .home_img{grid-area:block1;}
+            .home_content{grid-area:block2;}
+            .location{grid-area:block3;}
+            .info{grid-area:block4;}
+            .home{
+                display:grid;
+                grid-template-areas: 'block1 block2';
+                border: 2px solid black;
+                position: relative;
+                height: 500px;
+                
+            }
+            .home_img{
+                position: absolute;
+            }
+            .home_content{
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                left: 50%;
+                margin: 0%;
+                transform: translate(-50%, -50%);
+            }
+            .location_contact{
+                display:grid;
+                grid-template-areas: 'block3 block4';
+                border: 2px solid black;
+                position: relative;
+                height: 200px;
+            
+                
+            }
+            .location{
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                left: 50%;
+                margin: 0%;
+                transform: translate(-50%, -50%);
+            }
+            .info{
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                left: 50%;
+                margin: 0%;
+                transform: translate(-50%, -50%);
+            }
+            footer{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                background-color: rgb(44, 107, 224);
+                padding: 10px;
+            }
+        
+            
+        </style>
+    </body>
+</head>
+<body>
+    <header>
+        <b>MyRestaurant</b>
+        <nav class="navbar">
+            <a href="index.html" target="_self">Home</a>
+            <a href="About.html" target="_self">About</a>
+            <a href="Dishes.html" target="_self">Dishes</a>
+            <a href="Order.html" target="_self">Order</a>
+        </nav>
+        
+            <form action="" id="search">
+                <input type="search" placeholder="Search here...." id="searchbar">
+            </form>
+            <a href="Login.html" target="_self">Login</a>
+        
+    </header>
+    <section class="home">
+        <div class="home_img">
+            <img src="./Images/home-img.png" alt="Special Dishes" height="500">
+        </div>
+        <div class="home_content">
+            <h2>Our Special Dishes</h2>
+            <h3>Roast Chicken with Green Sauce.</h3>
+        </div>
+    </section>
+    <section class="location_contact">
+
+        
+    
+            <div class="location">
+                <h3>locations</h3>
+                <span>Mumbai</span><br>
+                <span>Pune</span><br>
+                <span>Nashik</span>
+                
+            </div>
+    
+            
+    
+            <div class="info">
+                <h3>contact info</h3>
+                <span>+91 9876543210</span><br>
+                <span>XYZ@gmail.com</span>
+                
+            </div>
+    
+            
+    
+        </section>    
+    
+        <footer> copyright @ 2022 by XYZ </footer>
+    
+    
+    
+</body>
+</html>
+    
+       
+    
+    
+    
+
+    
+    
+    
+
+    
+    

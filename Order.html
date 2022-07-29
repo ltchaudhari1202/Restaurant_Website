@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <style>
+        body{
+                padding: 0px;
+                margin: 0px;
+                background-color: rgb(130, 180, 243);
+            }
+            header>b{
+                font-size: 30px;
+                color: aliceblue;
+            }
+            header{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                background-color: rgb(44, 107, 224);
+                padding: 10px;
+                
+
+            }
+            header>.navbar>a{
+                padding: 10px;
+                margin:10px;
+                font-size: 15px;
+                color: aliceblue;
+                border: 1px solid transparent;
+                text-decoration: none;
+                font-weight: bold;
+
+            }
+            header>.navbar>a:hover{
+                border: 1px solid aliceblue;
+                border-radius: 10px;
+            }
+            
+            #search>input{
+                height: 30px;
+                width:200px;
+                border-radius: 10px;
+                border: none;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1), 
+                            0 8px 8px rgba(0, 0, 0, 0.1),
+                            0 16px 16px rgba(0, 0, 0, 0.1), 
+                            0 32px 32px rgba(0, 0, 0, 0.15),
+                            0 64px 64px rgba(0, 0, 0, 0.15);
+            }
+            #orderForm{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 600px;
+                
+                
+                
+                
+                
+            }
+            table{
+                border: 2px solid black;
+                margin: 20px;
+                padding: 20px;
+                
+                
+
+            }
+            span{
+                font-size: 20px;
+            }
+            input{
+                height: 30px;
+                width:200px;
+            }
+            
+
+
+            footer{
+                position: fixed;
+                bottom: 0px;
+                text-align: center;
+                width: 100%;
+                background-color: rgb(44, 107, 224);
+                padding: 10px;
+            }
+            
+    </style>
+</head>
+<body>
+    <header>
+        <b>MyRestaurant</b>
+        <nav class="navbar">
+            <a href="index.html" target="_self">Home</a>
+            <a href="About.html" target="_self">About</a>
+            <a href="Dishes.html" target="_self">Dishes</a>
+            <a href="Order.html" target="_self">Order</a>
+        </nav>
+        
+            <form action="" id="search">
+                <input type="search" placeholder="Search here...." id="searchbar">
+            </form>
+        
+    </header>
+    <form id="orderForm" action="Success.html" onsubmit="return validateForm()" novalidate>
+        <table>
+            <tr><td><label for="myname">Your name:</label></td>
+            <td><input type="text" id="myname" name="MyName" placeholder="enter your name" onblur="validate1() "></td></tr>
+            <tr><td></td><td id="nameerror"></td></tr>
+
+            <tr><td><label for="foodname">Your order:</label></td>
+            <td><input type="text" id="foodname" name="FoodName" placeholder="enter food name" onblur="validate2()"></td></tr>
+            <tr><td></td><td id="foodnameerror"></td></tr>
+
+            <tr><td><label for="quantity">Quantity:</label></td>
+            <td><input type="number" id="quantity" name="Quantity" placeholder="how many orders"onblur="validate3()"></td></tr>
+            <tr><td></td><td id="quantityerror"></td></tr>
+
+            <tr><td><label for="address">Address:</label></td>
+            <td><textarea name="MyAddress" placeholder="enter your address" id="address" cols="20" rows="5"onblur="validate4()"></textarea></td></tr>
+            <tr><td></td><td id="addresserror"></td></tr>
+
+            <tr><td></td><td> <input type="submit" value="Order Now"> <input type="reset"></td></tr>
+
+        
+                
+            
+    </table>
+
+    </form>
+
+    <footer> copyright @ 2022 by XYZ </footer>
+
+    <script>
+        let mynameNode=document.getElementById("myname");
+        console.log(mynameNode);
+        let foodnameNode=document.getElementById('foodname');
+        let quantityNode=document.getElementById('quantity');
+        let addressNode=document.getElementById('address')
+        let errornode1=document.getElementById('nameerror');
+        let errornode2=document.getElementById('foodnameerror');
+        let errornode3=document.getElementById('quantityerror');
+        let errornode4=document.getElementById('addresserror');
+        let array=[errornode1,errornode2,errornode3,errornode4];
+        for(let node of array){
+            node.style.color="red";
+        }
+        function validateForm(){
+            let v1=validate1();
+            let v2=validate2();
+            let v3=validate3();
+            let v4=validate4();
+            return (v1 && v2 && v3 && v4); 
+        }
+
+        function validate1(){
+            let myname=mynameNode.value;
+            let regex=new RegExp("^[A-Za-z]*$");
+            errornode1.innerHTML="";
+            if(myname===''){
+                errornode1.innerHTML="<small>Name is required</small>";
+                myname.style.border="2px solid red";
+                return false;
+            }
+            else if(regex.test(myname)==false){
+                errornode1.innerHTML="<small>First name must have only letters</small>";
+                myname.style.border="2px solid red";
+                return false;
+            }
+            else{
+                myname.style.border="2px solid green";
+                return true;
+            }
+        }
+        function validate2(){
+            let foodname=foodnameNode.value;
+            let regex=new RegExp("^[A-Za-z]*$");
+            errornode2.innerHTML="";
+            if(foodname===''){
+                errornode2.innerHTML="<small>Foodname is required</small>";
+                foodname.style.border="2px solid red";
+                return false;
+            }
+            else if(regex.test(foodname)==false){
+                errornode2.innerHTML="<small>Please enter valid food name</small>";
+                foodname.style.border="2px solid red";
+                return false;
+            }
+            else{
+                foodname.style.border="2px solid green";
+                return true;
+            }
+        }
+        function validate3(){
+            let quantity=quantityNode.value;
+            let regex=new RegExp("^[1-9]*$");
+            errornode3.innerHTML="";
+            if(quantity===''){
+                errornode3.innerHTML="<small>Quantity is required</small>";
+                quantity.style.border="2px solid red";
+                return false;
+            }
+            else if(regex.test(quantity)==false){
+                errornode3.innerHTML="<small>Please enter correct quantity</small>";
+                quantity.style.border="2px solid red";
+                return false;
+            }
+            else{
+                quantity.style.border="2px solid green";
+                return true;
+            }
+        }
+        function validate4(){
+            let address=addressNode.value;
+            
+            errornode4.innerHTML="";
+            if(address===''){
+                errornode4.innerHTML="<small>Address is required</small>";
+                address.style.border="2px solid red";
+                return false;
+            }
+            else{
+                address.style.border="2px solid green";
+                return true;
+            }
+        }
+        
+        
+    </script>
+    
+    
+</body>
+</html>
